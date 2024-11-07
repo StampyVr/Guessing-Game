@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+Btw if you leak my name im prob gonna block you so you better not :)
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<h1>Guess the Number Game</h1>
+<p>Stampy doesn't remember the last number to hes roblox password he knows the number is between 1 and 100 Could you help stampy guess the correct number so he can log into hes roblox account?</p>
+<button onclick="startGame()">Start Game</button>
+
+<div id="result"></div>
+
+<script>
+    let randomNumber;
+    let attempts = 0;
+
+    function startGame() {
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        attempts = 0;
+        document.getElementById('result').innerHTML = "Guess a number: <input type='number' id='userGuess'> <button onclick='checkGuess()'>Guess</button>";
+    }
+
+    function checkGuess() {
+        const userGuess = Number(document.getElementById('userGuess').value);
+        attempts++;
+
+        if (userGuess < randomNumber) {
+            document.getElementById('result').innerHTML += `<p>${userGuess} is too low! Try again.</p>`;
+        } else if (userGuess > randomNumber) {
+            document.getElementById('result').innerHTML += `<p>${userGuess} is too high! Try again.</p>`;
+        } else {
+            document.getElementById('result').innerHTML += `<p>Congratulations! ${userGuess} is correct! You guessed it in ${attempts} attempts now stampy can play roblox again thanks to you!.</p>`;
+        }
+    }
+</script>
+
+ <a href="https://www.youtube.com/@Stampy_VR">My Youtube Channel</a>
+</body>
+</html>
